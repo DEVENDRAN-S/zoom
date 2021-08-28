@@ -4,11 +4,10 @@ const app=express();
 const server=require('http').Server(app);
 const io=require('socket.io')(server)//initiating socket
 const { v4: uuidv4 }=require('uuid');
-const { ExpressPeerServer}=require('peer');
-const peerServer = ExpressPeerServer(server,{
-    debug: true
-});
-
+const { ExpressPeerServer}=require('peer');//importpeer
+const peerServer=ExpressPeerServer(server,{
+    debug:true
+})
 app.set('view engine','ejs');
 app.use(express.static('public'));
 
